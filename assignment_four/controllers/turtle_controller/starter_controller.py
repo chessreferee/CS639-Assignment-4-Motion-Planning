@@ -53,7 +53,7 @@ class StudentController:
             # need to do controls
             next_waypoint = self._calculated_path[self._path_waypoint_num] # find the next waypoint
 
-            if self.euclidean_dist(next_waypoint, robot_pose) < .05: # if close to it, then go to next waypoint
+            if self.euclidean_dist(next_waypoint, robot_pose) < .067: # if close to it, then go to next waypoint
                 if self._path_waypoint_num >= len(self._calculated_path):
                     control_dict["left_motor"] = 0
                     control_dict["right_motor"] = 0
@@ -66,7 +66,7 @@ class StudentController:
             target_angle = math.atan2(dy, dx)
             error = math.atan2(math.sin(target_angle - robot_pose[2]), math.cos(target_angle - robot_pose[2]))
 
-            turn = self.velocity_magnitude * error * 1.5
+            turn = self.velocity_magnitude * error * 1.2
             forward = self.velocity_magnitude * .5
 
             left = forward - turn
