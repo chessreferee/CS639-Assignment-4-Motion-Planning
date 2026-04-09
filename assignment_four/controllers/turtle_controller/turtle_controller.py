@@ -53,7 +53,7 @@ class TurtleBotController:
         self._heading_noise = 0 * (math.pi / 180)
 
         self.grid_map = np.load("gridmap.npy")
-        self.goal = (2, 2)
+        self.goal = (-2, 2)
         # if TEST == 1:
         #     self.grid_map = np.load("test_one.npy")
         #     self.goal = (-1, 2)

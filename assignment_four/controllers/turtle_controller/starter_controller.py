@@ -54,7 +54,7 @@ class StudentController:
             next_waypoint = self._calculated_path[self._path_waypoint_num] # find the next waypoint
 
             if self.euclidean_dist(next_waypoint, robot_pose) < .067: # if close to it, then go to next waypoint
-                if self._path_waypoint_num >= len(self._calculated_path):
+                if self._path_waypoint_num  + 1 >= len(self._calculated_path):
                     control_dict["left_motor"] = 0
                     control_dict["right_motor"] = 0
                     return control_dict
